@@ -3,6 +3,11 @@
   "version": "1.0.0",
   "description": "# Description ## Hackernews is a platform where people can share links to websites and people can comment on them.",
   "main": "index.js",
+  "husky":{
+    "hooks":{
+      "pre-commit": "prettier --write . && git add -A ."
+    }
+  },
   "scripts": {
     "dev": "cross-env NODE_ENV=development ts-node-dev --exit-child --respawn src/index.ts",
     "start": "ts-node src/main.ts"
@@ -29,6 +34,8 @@
     "@envelop/apollo-server-errors": "^3.5.0",
     "@graphql-tools/schema": "^9.0.1",
     "@graphql-yoga/node": "2.13.7",
-    "graphql": "^16.6.0"
+    "graphql": "^16.6.0",
+    "husky": "^8.0.1"
   }
+ 
 }
